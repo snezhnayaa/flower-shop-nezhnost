@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Нежность — цветочный магазин в Санкт-Петербурге</title>
+  <title>Нежность — цветочный магазин в Москве</title>
   <meta name="description" content="Цветочный магазин «Нежность». Свежие букеты, доставка, уютная атмосфера и забота о каждом заказе.">
   <style>
     :root {
@@ -443,6 +443,20 @@
       display: block;
     }
 
+    .catalog-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 16px;
+      box-shadow: 0 6px 18px rgba(61, 44, 42, 0.12);
+      transition: transform var(--transition);
+    }
+
+    .catalog-card:hover .catalog-img {
+      transform: scale(1.03);
+    }
+
     .catalog-card h3 {
       font-size: 1.18rem;
       color: var(--forest);
@@ -849,7 +863,7 @@
     <div class="container hero-content">
       <div class="hero-text">
         <h1>Цветы, которые<br><span>говорят за вас</span></h1>
-        <p>Свежие букеты, собранные с любовью. Доставка по Санкт-Петербургу в день заказа. Создаём настроение и сохраняем воспоминания.</p>
+        <p>Свежие букеты, собранные с любовью. Доставка по Москве в день заказа. Создаём настроение и сохраняем воспоминания.</p>
         <div class="btns">
           <a href="#catalog" class="btn btn-primary">Смотреть букеты 💐</a>
           <a href="#contacts" class="btn btn-outline">Как заказать</a>
@@ -895,7 +909,7 @@
               <div class="feature-icon">🚚</div>
               <div>
                 <strong>Быстрая доставка</strong>
-                <span>По Санкт-Петербургу от 2 часов</span>
+                <span>По Москве от 2 часов</span>
               </div>
             </div>
             <div class="feature-item">
@@ -926,19 +940,19 @@
       </div>
       <div class="catalog-grid">
         <div class="catalog-card">
-          <span class="catalog-emoji">🌹</span>
+          <img src="images/6218.jpg" alt="Букет красных роз" class="catalog-img">
           <h3>Классика «Страсть»</h3>
           <p class="desc">15 красных роз премиум-класса</p>
           <div class="price">3 900 ₽</div>
         </div>
         <div class="catalog-card">
-          <span class="catalog-emoji">🌸</span>
+          <img src="images/1687887376_55661046.jpg" alt="Букет розовых пионов" class="catalog-img">
           <h3>Нежность «Пионы»</h3>
           <p class="desc">Воздушный букет из розовых пионов</p>
           <div class="price">4 500 ₽</div>
         </div>
         <div class="catalog-card">
-          <span class="catalog-emoji">🌻</span>
+          <img src="images/i.jpg" alt="Букет с подсолнухами" class="catalog-img">
           <h3>Солнечный «Лето»</h3>
           <p class="desc">Подсолнухи, ромашки и зелень</p>
           <div class="price">2 800 ₽</div>
@@ -987,7 +1001,7 @@
         <div class="promo-card">
           <span class="tag">По понедельникам</span>
           <h3>Понедельник нежности</h3>
-          <p>Каждый понедельник — бесплатная доставка по Санкт-Петербургу при заказе от 2500 ₽.</p>
+          <p>Каждый понедельник — бесплатная доставка по Москве при заказе от 2500 ₽.</p>
         </div>
       </div>
     </div>
@@ -1037,7 +1051,7 @@
             <div class="info-icon">📍</div>
             <div>
               <strong>Адрес</strong>
-              <span>г. Санкт-Петербург, ул. Цветочная, 7<br>(рядом с метро)</span>
+              <span>г. Москва, ул. Цветочная, 7<br>(рядом с метро)</span>
             </div>
           </div>
           <div class="info-row">
@@ -1068,7 +1082,7 @@
           </div>
         </div>
         <div class="map-placeholder">
-          <p>Санкт-Петербург, ул. Цветочная, 7</p>
+          <p>Москва, ул. Цветочная, 7</p>
         </div>
       </div>
     </div>
