@@ -1,10 +1,10 @@
-# Автоматическое развёртывание на GitHub Pages при каждом push в main
-name: Deploy to GitHub Pages
+# Индивидуальный проект: проверка + деплой
+name: Check and Deploy
 
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:  # ручной запуск из вкладки Actions
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -16,23 +16,30 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check that index.html exists
+        run: |
+          test -f index.html && echo "index.html найден" || (echo "Нет index.html" && exit 1)
+      - name: Check basic HTML structure
+        run: |
+          grep -qi "<!DOCTYPE html>" index.html && echo "DOCTYPE OK"
+          grep -qi "<html" index.html && echo "html tag OK"
+          grep -qi "</html>" index.html && echo "closing html OK"
+
   deploy:
+    needs: check
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'   # корень репозитория (index.html, images, style и т.д.)
-
-      - name: Deploy to GitHub Pages
-        id: deployment
+          path: '.'
+      - id: deployment
         uses: actions/deploy-pages@v4
