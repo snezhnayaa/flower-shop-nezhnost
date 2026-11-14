@@ -1,5 +1,7 @@
 # 🌸 Нежность — Цветочный магазин
 
+![Deploy](https://github.com/snezhnayaa/flower-shop-nezhnost/actions/workflows/deploy.yml/badge.svg)
+
 Современный адаптивный одностраничный сайт цветочного магазина «Нежность».
 
 ## Описание
